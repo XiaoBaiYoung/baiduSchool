@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>html.2</title>
+  <style>
+    *{
+      margin:0;
+      padding: 0;
+    }
+    body{
+      background-color: rgb(222,222,222);
+    }
+    li{
+      list-style: none;
+    }
+    div.head{
+      width: 100vw;
+      height: 60px;
+      background-color: rgb(51,51,51);
+      margin:0;
+      border:none;
+    }
+    .head img{
+      height: 60px;
+      width: 200px;
+    }
+    .head ul{
+      display: inline;
+      position: absolute;
+      top:20px;
+      right: 40px;
+    }
+    .head ul li{
+      display: inline-block;
+      color: rgb(247,229,240);
+      margin-left: 10px;
+    }
+    .head ul li:last-child{
+      color: rgb(159,149,154);
+    }
+    div{
+      margin:20px;
+      background-color: rgb(255,255,255);
+      border:solid 1px;
+    }
+    .first *,
+    .second *,
+    .third *,
+    .four *{
+      margin-left: 20px;
+    }
+    h2{
+      padding-top: 40px;
+    }
+    h3{
+      margin-top: 20px;
+      color: rgb(98,118,121);
+    }
+    .first p:last-child{
+      padding-bottom: 40px;
+    }
+    p{
+      margin:20px;
+    }
+    .second li{
+      margin:10px;
+    }
+    .second li:last-child{
+      padding-bottom: 30px;
+    }
+    .third div{
+      width: 315px;
+      margin-left: 80px;
+    }
+    .third div p{
+      text-align: center;
+    }
+    table{
+      width: 97%;
+      margin-bottom: 20px;
+    }
+    table tr:first-child{
+      background-color: rgb(51,51,51);
+      color: white;
+    }
+    table tr:last-child{
+      background-color: rgb(204,204,204);
+    }
+    .last div{
+      border: none;
+    }
+    .right{
+      margin-left: 710px;
+    }
+    .left{
+      margin-left: 500px;
+    }
+    .left span{
+      display: block;
+      width: 200px;
+      height: 21px;
+      text-align: right;
+      margin-top: 0px;
+    }
+    .last p{
+      margin-left: 710px;
+    }
+    button{
+      width: calc(100vw - 40px);
+      height: 40px;
+      font-size: 25px;
+      color: white;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <img src="http://www.bing.com/th?id=OJ.IzWiXqf0cWr1DA&w=120&h=120&pid=MSNJVFeeds" alt="">
+    <ul>
+      <li>导航链接一</li>
+      <li>导航链接二</li>
+      <li>导航链接三</li>
+      <li>导航链接四</li>
+    </ul>
+  </div>
+  <div class="first">
+    <h2>文章一级标题</h2>
+    <h3>文章二级标题</h3>
+    <p>文章作者 文章发表时间</p>
+    <p>这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，</p>
+    <p>这是一个很长的段落，这是一个很长的段落，<a href="http://ife.baidu.com">这里有一个链接</a> 这是一个很长的段落，<strong>这里有个粗体字</strong> 这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，</p>
+    <img src="http://tse1.mm.bing.net/th?id=OET.8ceb3b04176842f583b09a49767fa00a&w=272&h=135&c=7&rs=1&qlt=90&o=4&pid=1.9" alt="">
+    <p>这是一个很长的段落，这是一个很长的段落，<a href="http://ife.baidu.com">这里有一个链接</a> 这是一个很长的段落，<strong>这里有个粗体字</strong> 这是一个很长的段落，<br>这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，</p>
+  </div>
+
+  <div class="second">
+    <h2>另一篇文章一级标题</h2>
+    <h3>二级标题</h3>
+    <p>文章作者 文章发表时间</p>
+    <p>这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，</p>
+    <p>这是一个很长的段落，这是一个很长的段落，<a href="http://ife.baidu.com">这里有一个链接</a> 这是一个很长的段落，<strong>这里有个粗体字</strong> 这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，</p>
+    <img src="http://tse1.mm.bing.net/th?id=OET.8ceb3b04176842f583b09a49767fa00a&w=272&h=135&c=7&rs=1&qlt=90&o=4&pid=1.9" alt="">
+    <ul>
+      <li>文章列表一</li>
+      <li>文章列表二</li>
+      <li>文章列表三</li>
+    </ul>
+  </div>
+
+  <div class="third">
+    <h2>图片</h2>
+    <div>
+      <p>好看的图片</p>
+      <img src="http://tse1.mm.bing.net/th?id=OET.8ceb3b04176842f583b09a49767fa00a&w=272&h=135&c=7&rs=1&qlt=90&o=4&pid=1.9" alt="">
+    </div>
+    <div>
+      <p>好看的图片</p>
+      <img src="http://tse1.mm.bing.net/th?id=OET.8ceb3b04176842f583b09a49767fa00a&w=272&h=135&c=7&rs=1&qlt=90&o=4&pid=1.9" alt="">
+    </div>
+    <div>
+      <p>好看的图片</p>
+      <img src="http://tse1.mm.bing.net/th?id=OET.8ceb3b04176842f583b09a49767fa00a&w=272&h=135&c=7&rs=1&qlt=90&o=4&pid=1.9" alt="">
+    </div>
+    <div>
+      <p>好看的图片</p>
+      <img src="http://tse1.mm.bing.net/th?id=OET.8ceb3b04176842f583b09a49767fa00a&w=272&h=135&c=7&rs=1&qlt=90&o=4&pid=1.9" alt="">
+    </div>
+    <div>
+      <p>好看的图片</p>
+      <img src="http://tse1.mm.bing.net/th?id=OET.8ceb3b04176842f583b09a49767fa00a&w=272&h=135&c=7&rs=1&qlt=90&o=4&pid=1.9" alt="">
+    </div>
+  </div>
+    
+  <div class="four">
+    <h2>最后一篇文章一级标题</h2>
+    <h3>文章二级标题</h3>
+    <p>文章作者 文章发表时间</p>
+    <ul>
+      <li>1.排名1</li>
+      <li>2.排名2</li>
+      <li>3.排名3</li>
+    </ul>
+    <p>下面是一个表格，给表格添加了一个boeder=“1”好让你看出是一个表格</p>
+    <table border="1">
+      <tr>
+        <td>表头</td>
+        <td>表头</td>
+        <td>表头</td>
+      </tr>
+      <tr>
+        <td>表内容单元格</td>
+        <td>表内容单元格</td>
+        <td>操作</td>
+      </tr>
+      <tr>
+        <td>表内容单元格</td>
+        <td>表内容单元格</td>
+        <td>操作</td>
+      </tr>
+      <tr>
+        <td>表内容单元格</td>
+        <td>表内容单元格</td>
+        <td>操作</td>
+      </tr>
+      <tr>
+        <td>表内容单元格</td>
+        <td>表内容单元格</td>
+        <td>操作</td>
+      </tr>
+      <tr>
+        <td>总计</td>
+        <td>1000</td>
+      </tr>
+    </table>
+  </div>
+    
+  <div class="last">
+    <h2>这里以后是一个侧栏，这是侧栏的标题</h2>
+    <div class="left"><span>请输入邮箱地址：</span></div>
+    <div class="right"><input type="text" placeholder="这是一个文本输入框"></div>
+    <p class="text">邮箱地址请按要求格式输入</p>
+    <div class="left"><span>请输入密码：</span></div>
+    <div class="right"><input type="text" placeholder="这是一个文本输入框"></div>
+    <div class="left"><span>请重复输入密码：</span></div>
+    <div class="right"><input type="text" placeholder="这是一个文本输入框"></div>
+    <p class="text">密码请为6-16位英文数字</p>
+    <div class="left"><span>性别：</span></div>
+    <div class="right">
+      <input type="radio" name="gender" value="male">
+      <span>男</span>
+      <input type="radio" name="gender" value="female">
+      <span>女</span>
+    </div>
+    <div class="left"><span>城市：</span></div>
+    <div class="right">
+      <select>
+        <option>北京</option>
+        <option>杭州</option>
+        <option>上海</option>
+        <option>嘉兴</option>
+        <option>余杭</option>
+      </select>
+    </div>
+    <div class="left"><span>爱好</span></div>
+    <div class="right">
+      <input type="radio" name="like" value="sport">
+      <span>运动</span>
+      <input type="radio" name="like" value="art">
+      <span>艺术</span>
+      <input type="radio" name="like" value="seience">
+      <span>科学</span>
+    </div>
+    <div class="left"><span> 个人描述</span></div>
+    <div class="right">
+      <textarea placeholder="这是一个多行输入框，输入您的个人描述" rows="5" cols="100"></textarea>
+    </div>
+    <button>确认提交</button>
+  </div>
+    
+  <p>版权所有</p>
+</body>
+</html>
