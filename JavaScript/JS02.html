@@ -32,23 +32,18 @@ var aqiData = [
   将空气质量指数大于60的城市显示到aqi-list的列表中
   */
   var ul = document.querySelector('ul')
+  var box = document.createDocumentFragment()
   var listLi
-  var listSpan1
-  var listSpan2
 
   for(var i = 0 ; i < aqiData.length ; i++){
-    if(aqiData[i][1] > 60){
+    if (aqiData[i][1] > 60) {
       listLi = document.createElement('li')
-      ul.appendChild(listLi)
-
-      listSpan1 = document.createElement('span')
-      listSpan2 = document.createElement('span')
-      listSpan1.innerText = aqiData[i][0]
-      listSpan2.innerText = aqiData[i][1]
-      listLi.appendChild(listSpan1)
-      listLi.appendChild(listSpan2)
+      listLi.innerText = `${aqiData[i][0]}` + `${aqiData[i][1]}`
+      box.appendChild(listLi)
     }
   }
+  ul.appendChild(box)
+
 })();
 
 </script>
