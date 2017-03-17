@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IFE JavaScript Task 04</title>
+  <style type="text/css">
+    li{
+      list-style: none;
+      display: inline-block;
+      margin: 10px;
+      background-color: lightblue;
+      text-align: center;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text">
+  <button id="leftEnter">左侧入</button>
+  <button id="rightEnter">右侧入</button>
+  <button id="leftDelete">左侧出</button>
+  <button id="rightDelete">右侧出</button>
+  <ul>
+    
+  </ul>
+</body>
+<script type="text/javascript">
+  var leftEnter = document.getElementById('leftEnter')
+  var rightEnter = document.getElementById('rightEnter')
+  var leftDelete = document.getElementById('leftDelete')
+  var rightDelete = document.getElementById('rightDelete')
+  var input = document.querySelector('input')
+  var box = document.querySelector('ul')
+
+  leftEnter.addEventListener('click' , function(){
+    if (input.value == '') {
+
+    }else{
+      var firstLi
+      var liLeftEnter = document.createElement('li')
+      liLeftEnter.innerText = input.value
+      if (document.querySelector('li') == null) {
+        firstLi = box.firstChild
+        box.insertBefore(liLeftEnter , firstLi)
+        input.value = ''
+      }else{
+         firstLi = document.querySelector('li')
+         box.insertBefore(liLeftEnter , firstLi)
+         input.value = ''
+      } 
+    }
+    
+  })
+
+  rightEnter.addEventListener('click' , function(){
+    if (input.value == '') {
+
+    }else{
+      var liRightEnter = document.createElement('li')
+      liRightEnter.innerText = input.value
+      box.appendChild(liRightEnter)
+      input.value = ''
+    }
+  })
+
+  leftDelete.addEventListener('click' , function(){
+    if (document.querySelector('li') == null) {
+
+    }else{
+      var firstLi = document.querySelector('li')
+      alert(`${firstLi.innerText}`)
+      box.removeChild(firstLi) 
+    }
+    
+  })
+
+  rightDelete.addEventListener('click' , function(){
+    if (document.querySelector('li') == null) {
+
+    }else{
+      var listLi = document.querySelectorAll('li')
+      var lastLi = listLi[listLi.length - 1]
+      alert(`${lastLi.innerText}`)
+      box.removeChild(lastLi) 
+    }
+    
+  })
+</script>
+</html>

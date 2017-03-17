@@ -93,7 +93,7 @@ function render(data) {
   var li
   for(var i = 0 ; i < data.length ; i++){
     li = document.createElement('li')
-    li.innerText = `${data[i][0]}` + `${data[i][1]}`
+    li.innerText = '第' + `${i + 1}` + '名' + '  ' + `${data[i][0]}` + `${data[i][1]}`
     box.appendChild(li)
   }
   ul2.appendChild(box)
