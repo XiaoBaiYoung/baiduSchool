@@ -33,9 +33,7 @@
   var box = document.querySelector('ul')
 
   leftEnter.addEventListener('click' , function(){
-    if (input.value == '') {
-
-    }else{
+    if (/^\d+$/.test(input.value)) {
       var firstLi
       var liLeftEnter = document.createElement('li')
       liLeftEnter.innerText = input.value
@@ -47,19 +45,21 @@
          firstLi = document.querySelector('li')
          box.insertBefore(liLeftEnter , firstLi)
          input.value = ''
-      } 
+      }
+    }else{
+       alert('输入的不是纯数字，请重新输入')
     }
     
   })
 
   rightEnter.addEventListener('click' , function(){
-    if (input.value == '') {
-
-    }else{
+    if (/^\d+$/.test(input.value)) {
       var liRightEnter = document.createElement('li')
       liRightEnter.innerText = input.value
       box.appendChild(liRightEnter)
       input.value = ''
+    }else{
+      alert('输入的不是纯数字，请重新输入')
     }
   })
 
