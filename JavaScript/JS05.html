@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IFE JavaScript Task 05</title>
+  <style>
+    li{
+      list-style: none;
+      width: 30px;
+      margin:10px;
+      border: solid black 1px;
+      background-color: blue;
+      display: inline-block;
+      transition: all .5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" name="">
+  <button id="enter">插入内容</button>
+  <button id="leftDelete">左侧删除内容</button>
+  <button id="rightDelete">右侧删除内容</button>
+  <button id="sortNum">排序</button>
+  <ul></ul>
+</body>
+<script type="text/javascript">
+  var input = document.querySelector('input')
+  var enter = document.getElementById('enter')
+  var sortNum = document.getElementById('sortNum')
+  var leftDelete = document.getElementById('leftDelete')
+  var rightDelete = document.getElementById('rightDelete')
+  var box = document.querySelector('ul')
+
+  //点击插入内容，查看是否为数字，再看是否在10-100内，然后插入
+  enter.addEventListener('click' , function(){
+    if (/^\d+$/.test(input.value)) {
+      var inputText = parseInt(input.value)
+      if (inputText < 100 && inputText > 10) {
+        var liSum = document.querySelectorAll('li')
+        if (liSum.length > 60) {
+          alert('队列元素数量最多限制为60个，请不要再输入了')
+        }
+        var listLi = document.createElement('li')
+        listLi.style.height = 2 * inputText + 'px'
+        box.appendChild(listLi)
+        input.value = ''
+      }else{
+        alert('请输入10到100之间的数字')
+      }
+    }else{
+      alert('输入的不是纯数字，请重新输入')
+    }
+  })
+
+  //点击左侧删除内容，从左侧删除一个元素
+  leftDelete.addEventListener('click' , function(){
+    var firstLi = document.querySelector('li')
+    box.removeChild(firstLi)
+  })
+
+  //点击右侧删除内容，从右侧删除一个元素
+  rightDelete.addEventListener('click' , function(){
+    var liSum = document.querySelectorAll('li')
+    var lastLi = liSum[liSum.length - 1]
+    box.removeChild(lastLi)
+  })
+
+  sortNum.addEventListener('click' , function(){
+    var liSum = document.querySelectorAll('li')
+    let count = 0
+    for(let i = 0 ; i < liSum.length - 1 ; i++){
+      liSum = document.querySelectorAll('li')
+      for(let j = 0 ; j < liSum.length - 1 - i; j++){
+        if (parseInt(liSum[j].style.height) > parseInt(liSum[j + 1].style.height)) {
+              console.log(count)
+              count++
+
+              liSum[j].style.backgroundColor = 'red'
+              liSum[j + 1].style.backgroundColor = 'red'
+
+              let timer = new Promise(function(resolve , reject){
+                setTimeout(function(){
+                  box.insertBefore(liSum[j + 1] , liSum[j])
+
+                  liSum[j].style.backgroundColor = 'blue'
+                  liSum[j + 1].style.backgroundColor = 'blue'
+                } , 500 * count)
+              })
+
+
+
+
+            // let timer = setTimeout(function(){
+            //   box.insertBefore(liSum[j + 1] , liSum[j])
+
+            //   liSum[j].style.backgroundColor = 'blue'
+            //   liSum[j + 1].style.backgroundColor = 'blue'
+            // } , 500 * count)
+              
+        }
+      }
+    }
+  })
+</script>
+</html>
