@@ -65,6 +65,7 @@
     box.removeChild(lastLi)
   })
 
+  //点击排序，还未完成
   sortNum.addEventListener('click' , function(){
     var liSum = document.querySelectorAll('li')
     let count = 0
@@ -72,31 +73,22 @@
       liSum = document.querySelectorAll('li')
       for(let j = 0 ; j < liSum.length - 1 - i; j++){
         if (parseInt(liSum[j].style.height) > parseInt(liSum[j + 1].style.height)) {
-              console.log(count)
-              count++
-
-              liSum[j].style.backgroundColor = 'red'
-              liSum[j + 1].style.backgroundColor = 'red'
-
-              let timer = new Promise(function(resolve , reject){
-                setTimeout(function(){
-                  box.insertBefore(liSum[j + 1] , liSum[j])
-
-                  liSum[j].style.backgroundColor = 'blue'
-                  liSum[j + 1].style.backgroundColor = 'blue'
-                } , 500 * count)
-              })
+            box.insertBefore(liSum[j + 1] , liSum[j])
 
 
+              // count++
 
+              // liSum[j].style.backgroundColor = 'red'
+              // liSum[j + 1].style.backgroundColor = 'red'
 
-            // let timer = setTimeout(function(){
-            //   box.insertBefore(liSum[j + 1] , liSum[j])
+              // let timer = new Promise(function(resolve , reject){
+              //   setTimeout(function(){
+              //     box.insertBefore(liSum[j + 1] , liSum[j])
 
-            //   liSum[j].style.backgroundColor = 'blue'
-            //   liSum[j + 1].style.backgroundColor = 'blue'
-            // } , 500 * count)
-              
+              //     liSum[j].style.backgroundColor = 'blue'
+              //     liSum[j + 1].style.backgroundColor = 'blue'
+              //   } , 500 * count)
+              // })    
         }
       }
     }

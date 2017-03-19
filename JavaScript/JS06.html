@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IFE JavaScript Task 06</title>
+</head>
+<body>
+  <div>
+    <textarea rows="20" cols="100"></textarea>
+    <button id="input">点击输入</button>
+  </div>
+  <div>
+    <input type="text">
+    <button id="query">点击查询</button>
+  </div>
+  <div>
+    <ul>
+      
+    </ul>
+  </div>
+</body>
+<script type="text/javascript">
+  var inputButton = document.getElementById('input')
+  var queryButton = document.getElementById('query')
+  var box = document.querySelector('ul')
+  var textarea = document.querySelector('textarea')
+  var inputText = document.querySelector('input')
+
+  //点击输入按钮创建内容
+  inputButton.addEventListener('click' , function(){
+    var listLi = document.createElement('li')
+    listLi.innerText = textarea.value
+    box.appendChild(listLi)
+    textarea.value = ''
+  })
+
+  //点击查找，查到到有匹配元素时，那个元素的背景颜色变成蓝色
+  queryButton.addEventListener('click' , function(){
+    var sumLi = document.querySelectorAll('li')
+    var newinputText = new RegExp(inputText.value , 'g')
+
+    Array.prototype.forEach.call(sumLi , it => it.style.backgroundColor = 'white')
+
+    for(var i = 0 ; i < sumLi.length ; i++){
+      if (newinputText.test(sumLi[i].innerText)) {
+        sumLi[i].style.backgroundColor = 'lightblue'
+      }
+    }
+
+    // Array.prototype.forEach.call(sumLi , it => it.innerText = it.innerText.replace(newinputText , `<span color='red'>${inputText.value}</span>`))
+  })
+</script>
+</html>
